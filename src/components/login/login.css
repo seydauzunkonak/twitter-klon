@@ -1,0 +1,13 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+}
+.login-wrapper {
+  display: flex;
+  flex-direction: table-column;
+  width: 750%;
+  padding-top: 20px;
+}
+.login-item {
+  padding: 30px 0;
+}
