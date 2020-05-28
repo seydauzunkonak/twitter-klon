@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { logout } from "../../actions";
 
 class Menu extends Component {
   render() {
@@ -13,9 +14,20 @@ class Menu extends Component {
         <div className="item">
           <Link to="/myTweets">Benim Tweetlerim</Link>
         </div>
+        <div className="item">
+          <Link to="/newTweet">Yeni Tweet</Link>
+        </div>
         <div className="right menu"></div>
         <div className="item">
-          <Link to="/login"> Çıkış Yap </Link>
+          <Link
+            to="/"
+            onClick={() => {
+              this.props.logout();
+            }}
+          >
+            {" "}
+            Çıkış Yap{" "}
+          </Link>
         </div>
       </div>
     ) : (
@@ -38,4 +50,4 @@ const mapStateToProps = (state) => {
     auth: state.auth,
   };
 };
-export default connect(mapStateToProps, {})(Menu);
+export default connect(mapStateToProps, { logout })(Menu);
