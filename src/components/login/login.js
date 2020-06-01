@@ -6,10 +6,12 @@ import { login } from "../../actions";
 class Login extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       email: "",
       password: "",
     };
+
     this.onChange = this.onChange.bind(this);
   }
 
@@ -23,7 +25,7 @@ class Login extends Component {
     return (
       <div className="login-container">
         <div className="login-wrapper">
-          <div className="login-item ui-input">
+          <div className="login-item ui input">
             <input
               type="text"
               placeholder="İsminiz"
@@ -32,7 +34,7 @@ class Login extends Component {
               onChange={this.onChange}
             />
           </div>
-          <div className="login-item ui-input">
+          <div className="login-item ui input">
             <input
               type="password"
               placeholder="Şifreniz"
@@ -48,11 +50,12 @@ class Login extends Component {
               this.props.login(email, password);
             }}
           >
-            Giriş Yap
+            Giriş yap
           </button>
         </div>
       </div>
     );
   }
 }
+
 export default connect(null, { login })(Login);
